@@ -1,0 +1,18 @@
+Strategy:
+Upon looking at the input data, and classification for language, my intuitive approach was to use Naive Bayes which gave good accuracy for the dev set. I also tried other classification models like SVM, logisitic regression but Naive bayes was performing better than those models. I was trying to create an ensemble of different models where I accumulate votes by each trained model and finally predict the class with maximum votes. But naive bayes was working better in most scenarios. 
+
+I had short conversations with many classmates of mine (some being Rhythm Gupta, Mohit Garg, Somaditya) regarding the different model they tried and the results they got, and the general feedback which I got was that basic NB was performing satisfactory. So I spent most of my time trying to find the right hyper parameters for the vectorizer and the MNB model. 
+
+Could not test hpc as ssh was not working. So after my local testing, I could get the following for valid_new:
+macro f1 score is  0.8868891872625873
+micro f1 score is  0.8562052505966588
+
+I have also submitted the jupyter notebook where I did my testing.
+
+# sample usage
+bash run_model.sh train <path_to_data_json> <path_to_save>
+bash run_model.sh test <path_to_save> <path_to_test_json> output.txt
+
+# example:
+bash run_model.sh train ./data/ ./
+bash run_model.sh test ./ ./data/valid_new.json output.txt
