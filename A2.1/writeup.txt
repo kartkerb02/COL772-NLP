@@ -1,0 +1,29 @@
+Writeup for Tabular QnA Predictor Model 
+
+Approach
+
+The model architecture comprises several key components:
+
+    Pre-trained Embeddings: We utilize GloVe embeddings ("glove-wiki-gigaword-50") for initial word representations
+    Tokenization and Vocabulary Expansion: The nltk library's word_tokenize function    
+    Embedding Layer: An embedding layer, initialized with GloVe vectors (and expanded for new tokens), transforms token indices into dense vectors. This layer is set to be trainable to fine-tune embeddings on our specific dataset.
+    LSTM for Question Encoding: A bi-directional LSTM processes question embeddings to capture context and sequence dependencies    
+    Column Representation and Similarity: Column headers are represented by summing their word embeddings
+    Training and Evaluation: The model is trained using Cross-Entropy Loss, optimizing with Adam. Accuracy is evaluated by comparing predicted column indices against ground truths.
+
+Libraries and Dependencies
+    Python: The programming language of choice for its extensive data science ecosystem.
+    PyTorch: A deep learning framework providing tensors, automatic differentiation, and GPU acceleration.
+    NLTK: Utilized for tokenization and potentially other NLP tasks.
+    Gensim: For accessing pre-trained GloVe embeddings.
+    Scikit-learn (not explicitly mentioned but implied for potential use in data preprocessing or additional evaluation metrics).
+
+Hyperparameters
+    Embedding dimension: 50 (from GloVe "glove-wiki-gigaword-50").
+    Hidden dimension for LSTM: 256.
+    Learning rate: 1e-3.
+    Batch size: 32.
+    Number of epochs: 10 (variable based on convergence).
+
+Discussions
+    I discussed my work with some of my classmates inclusind Kshitij, Somaditya, Mohit and Dhruv. No code was shared in any form.

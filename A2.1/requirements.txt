@@ -1,0 +1,10 @@
+torch
+numpy
+gensim
+pandas
+nltk
+datefinder
+unidecode
+tqdm
+scikit-learn
+gdown
